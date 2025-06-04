@@ -1,4 +1,4 @@
-<h1 align="center">😂 Meme Picker Generator</h1>
+<h1 align="center">😂Scrimba Meme Picker</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Project-Scrimba%20Course-blueviolet?style=for-the-badge" />
