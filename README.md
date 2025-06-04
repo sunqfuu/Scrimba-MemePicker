@@ -31,12 +31,11 @@
 
 ## 🛠 Tech Stack
 
-| Technology | Role                      |
-|------------|---------------------------|
-| HTML       | Page structure            |
-| CSS        | Styling & layout          |
-| JavaScript | DOM manipulation & logic  |
-| API        | [Imgflip API](https://api.imgflip.com) for memes
+| Technology | Role                     |
+| ---------- | ------------------------ |
+| HTML       | Page structure           |
+| CSS        | Styling & layout         |
+| JavaScript | DOM manipulation & logic |
 
 ---
 
@@ -47,3 +46,4 @@
 ```bash
 git clone https://github.com/sunqfuu/Scrimba-MemePicker.git
 cd Scrimba-MemePicker
+```
