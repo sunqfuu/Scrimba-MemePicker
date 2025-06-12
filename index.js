@@ -6,38 +6,50 @@ const gifsOnlyOption = document.getElementById('gifs-only-option')
 
 emotionRadios.addEventListener('change', highlightCheckedOption)
 
-getImageBtn.addEventListener('click', getMatchingCatsArray)
+getImageBtn.addEventListener('click', renderCat)
 
-function highlightCheckedOption(e) {
+function highlightCheckedOption(e){
     const radios = document.getElementsByClassName('radio')
-    for (let radio of radios) {
+    for (let radio of radios){
         radio.classList.remove('highlight')
     }
     document.getElementById(e.target.id).parentElement.classList.add('highlight')
 }
 
-function getMatchingCatsArray() {
-    if (document.querySelector('input[type="radio"]:checked')) {
+function getMatchingCatsArray(){     
+    if(document.querySelector('input[type="radio"]:checked')){
         const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
         const isGif = gifsOnlyOption.checked
-
-        const matchingCatsArray = catsData.filter(function (cat) {
-            if (isGif) {
+        
+        const matchingCatsArray = catsData.filter(function(cat){
+            
+            if(isGif){
                 return cat.emotionTags.includes(selectedEmotion) && cat.isGif
             }
-            else {
+            else{
                 return cat.emotionTags.includes(selectedEmotion)
-            }
+            }            
         })
-        console.log(matchingCatsArray)
+        return matchingCatsArray 
+    }   
+}
+
+function getSingleCatObject(){
+    const catsArray = getMatchingCatsArray()
+    if(catsArray && catsArray.length === 1){
+        console.log(catsArray[0])
     }
 }
 
-function getEmotionsArray(cats) {
-    const emotionsArray = []
-    for (let cat of cats) {
-        for (let emotion of cat.emotionTags) {
-            if (!emotionsArray.includes(emotion)) {
+function renderCat(){
+
+}
+ 
+function getEmotionsArray(cats){
+    const emotionsArray = []    
+    for (let cat of cats){
+        for (let emotion of cat.emotionTags){
+            if (!emotionsArray.includes(emotion)){
                 emotionsArray.push(emotion)
             }
         }
@@ -46,11 +58,11 @@ function getEmotionsArray(cats) {
 }
 
 
-function renderEmotionsRadios(cats) {
-
+function renderEmotionsRadios(cats){
+        
     let radioItems = ``
     const emotions = getEmotionsArray(cats)
-    for (let emotion of emotions) {
+    for (let emotion of emotions){
         radioItems += `
         <div class="radio">
             <label for="${emotion}">${emotion}</label>
