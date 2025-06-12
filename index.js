@@ -16,11 +16,14 @@ function highlightCheckedOption(e) {
     document.getElementById(e.target.id).parentElement.classList.add('highlight')
 }
 
+
 function getMatchingCatsArray() {
     if (document.querySelector('input[type="radio"]:checked')) {
         const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
         const isGif = gifsOnlyOption.checked
-        console.log(selectedEmotion, isGif)
+
+        const matchingCatsArray = catsData.filter(cat => cat.emotionTags.includes(selectedEmotion))
+        console.log(matchingCatsArray)
     }
 }
 
